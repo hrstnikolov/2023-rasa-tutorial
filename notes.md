@@ -1,4 +1,0 @@
-# Notes
-
-## Objective
-Create assistant

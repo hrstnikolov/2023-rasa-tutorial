@@ -1,0 +1,53 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: check_availability
+  examples: |
+    - Are you available next weekend?
+    - Is there free slot on 5 May?
+    - Can i come this Friday, 16:00?
+    - I would like to come on Monday, 16 September.
+
+- intent: confirm_date
+  examples: |
+    - Yes, I can come.
+    - Yes, I am available.
+    - Sure, book it!
+    - Great, see you on Monday then!
+    - Yes, this time works for me!
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
