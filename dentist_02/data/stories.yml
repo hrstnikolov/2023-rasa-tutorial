@@ -9,9 +9,7 @@ stories:
   - intent: check_availability
   - action: utter_confirm_availability
   - action: utter_book_date
-  - or:
-    - intent: goodbye
-    - intent: thanks
+  - intent: goodbye
   - action: utter_goodbye
 
 #- story: fully booked path
@@ -25,3 +23,8 @@ stories:
 #  - action: utter_book_date
 #  - action: utter_goodbye
 #  - intent: goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
