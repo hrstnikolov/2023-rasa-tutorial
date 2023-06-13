@@ -1,27 +1,53 @@
 version: '3.1'
 intents:
-- bot_challenge
-- check_availability
-- confirm_date
-- goodbye
-- greet
+  - greet
+  - check_availability
+  - affirm
+  - deny
+  - goodbye
+  - bot_challenge
+
+entities:
+  - weekday
+
+slots:
+  weekday:
+    type: categorical
+    values:
+      - Monday
+      - Tuesday
+      - Wednesday
+      - Thursday
+      - Friday
+      - Saturday
+      - Sunday
+    mappings:
+      - type: from_entity
+        entity: weekday
+
+actions:
+  - check_date_availability
+
 responses:
   utter_greet:
-  - text: Hello! This is the automatic dentist booking system. Would you like to book an appointment?
+    - text: "Hello! This is the automatic dentist booking system. Would you like to make an appointment?"
+    - text: "Hello!Would you like to make a dentist appointment?"
+      buttons:
+        - title: 'yes'
+          payload: '/affirm'
+        - title: 'no'
+          payload: '/deny'
   utter_confirm_availability:
-  - text: Yes, the dentist is available at this time.
-  utter_book_date:
-  - text: I booked you!
+    - text: "Yes, the dentist is available at this time."
   utter_fully_booked:
-  - text: I apologize, the dentist is not available at the time.
-  utter_suggest_alternative_date:
-  - text: I have booked you!
+    - text: "I apologize, the dentist is not available at the time."
+  utter_book_date:
+    - text: "I booked you!"
   utter_goodbye:
-  - text: Bye!
+    - text: "Bye!"
   utter_iamabot:
-  - text: I am a dentist chat bot.
+    - text: "I am a dentist chat bot."
+
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
-actions:
-- utter_greet

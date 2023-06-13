@@ -2,29 +2,23 @@ version: "3.1"
 
 stories:
 
-- story: happy path
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: check_availability
-  - action: utter_confirm_availability
-  - action: utter_book_date
-  - intent: goodbye
-  - action: utter_goodbye
+  - story: happy path
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: affirm
+      - intent: check_availability
+      - action: check_date_availability
 
-#- story: fully booked path
-#  steps:
-#  - intent: greet
-#  - action: utter_greet
-#  - intent: check_availability
-#  - action: utter_fully_booked
-#  - action: utter_suggest_alternative_date
-#  - intent: confirm_date
-#  - action: utter_book_date
-#  - action: utter_goodbye
-#  - intent: goodbye
+  - story: available date
+    steps:
+      - action: utter_confirm_availability
+      - or:
+          - intent: goodbye
+          - intent: affirm
+      - action: utter_goodbye
 
-- story: interactive_story_1
-  steps:
-  - intent: greet
-  - action: utter_greet
+  - story: fully booked
+    steps:
+      - action: utter_fully_booked
+      - action: check_date_availability
