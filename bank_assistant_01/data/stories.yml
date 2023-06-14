@@ -1,0 +1,36 @@
+version: "3.1"
+
+stories:
+  - story: welcome customer
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: make_transfer
+      - checkpoint: send_money
+
+  - story: customer makes a transaction
+    steps:
+      - checkpoint: send_money
+      - action: utter_request_amount
+      - intent: inform
+      - action: utter_request_recipient
+      - intent: inform
+      - action: utter_confirm_transaction
+      - intent: confirm
+      - action: utter_transaction_completed
+      - checkpoint: further_help
+
+  - story: customer wants further help
+    steps:
+      - checkpoint: further_help
+      - action: utter_further_help
+      - intent: affirm
+      - checkpoint: send_money
+
+  - story: customer does not want further help
+    steps:
+      - checkpoint: further_help
+      - action: utter_further_help
+      - intent: deny
+      - action: utter_goodbye
+

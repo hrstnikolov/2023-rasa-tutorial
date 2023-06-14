@@ -1,0 +1,60 @@
+version: "3.1"
+
+intents:
+  - greet
+  - make_transfer
+  - inform
+  - affirm
+  - deny
+  - thankyou
+  - goodbye
+  - bot_challenge
+
+entities:
+  - amount
+  - recipient
+
+slots:
+  amount:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: amount
+  recipient:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: recipient
+
+
+responses:
+
+  utter_greet:
+    - text: "Hello, I am your bank assistant. How may I help you?"
+
+  utter_request_amount:
+    - text: "Sure! How much would you like to send?"
+
+  utter_request_recipient:
+    - text: "Who is the recipient?"
+
+  utter_confirm_transaction:
+    - text: "Please confirm the following is correct: {amount} to {recipient}."
+
+  utter_transaction_completed:
+    - text: "The transaction is completed!"
+
+  utter_further_help:
+    - text: "Is there another task I can help you with?"
+
+  utter_goodbye:
+    - text: "Have a nice day! Goodbye!"
+
+  utter_iamabot:
+    - text: "I am a bank assistant bot."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
