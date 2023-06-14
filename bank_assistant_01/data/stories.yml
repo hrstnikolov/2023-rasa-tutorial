@@ -2,6 +2,9 @@ version: "3.1"
 
 stories:
   - story: welcome customer
+    metadata:
+      revision: 2023-06-14
+      author: Hristo Nikolov
     steps:
       - intent: greet
       - action: utter_greet

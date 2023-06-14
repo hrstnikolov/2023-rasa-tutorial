@@ -11,6 +11,19 @@ intents:
   - bot_challenge
 
 nlu:
+  - synonym: money
+    examples: |
+      - cash
+      - sum of money
+      - amount of cash
+
+  - lookup: banks
+    examples: |
+      - KBC
+      - OBB
+      - FIB
+      - Postbank
+
   - regex: amount
     examples: |
       - \d{2,4}
@@ -32,13 +45,31 @@ nlu:
       - good afternoon
 
   - intent: make_transfer
-    examples: |
-      - I would like to make transfer to my friend.
-      - make transfer
-      - I want to send some money.
-      - Can I send an amount from my account?
+    examples:
+      - text: |
+          I would like to make transfer to my friend.
+      - text: |
+          make transfer
+        # Adding a `sentiment` metadata.
+        metadata:
+          sentiment: neutral
+      - text: |
+          I want to send some money.
+      - text: |
+          Can I send an amount from my account?
 
-  - intent: inform
+  - intent: inform/amount
+    examples: |
+      - [100](amount) EUR
+      - [120](amount) USD
+      - I want to send [1200.00](amount) BGN
+
+  - intent: inform/recipient
+    examples: |
+      - Please send them to [Ivan Ivanov](recipient)
+      - Transfer to [Stoyan Stoyanov](recipient).
+      - Transfer the money to Mr. [Frank Jacobs]{"entity": "recipient"}.
+
   - intent: goodbye
     examples: |
       - cu
