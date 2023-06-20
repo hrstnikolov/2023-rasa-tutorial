@@ -1,5 +1,64 @@
 # Project Ideas
 
+## Progress
+
+- [x] learn the main rasa CLI commands
+- [x] replicate the code for rasa rock paper scissors tutorial
+- [x] write custom action that reads data from slots and sends out responses to the user
+- [x] 
+
+
+Level 1:
+- [x] Write a basic chatbot.
+- [x] Run the chatbot and interact with it.
+- [x] Understand the basic file structure and skeleton of a Rasa chatbot project.
+
+Level 2:
+- [x] Define intents for user inputs.
+- [x] Create simple training examples for each intent.
+- [x] Train the chatbot with the training data.
+
+Level 3:
+- [ ] Define entities to extract specific information from user inputs.
+- [ ] Implement entity extraction using regular expressions or pre-trained entity extractors.
+- [ ] Test the entity extraction capabilities of the chatbot.
+
+Level 4:
+- [x] Build custom actions to handle complex logic or external API integrations.
+- [ ] Understand the flow of information between user inputs, NLU, and custom actions.
+- [ ] Implement and test a basic custom action.
+
+Level 5:
+- [ ] Create more diverse training data to improve the chatbot's understanding.
+- [ ] Use data augmentation techniques to enhance the training data.
+- [ ] Evaluate and iterate on the chatbot's performance based on user feedback.
+
+Level 6:
+- [ ] Design and implement a dialogue management system using Rasa's story format.
+- [ ] Define conversation flows with multiple turns and different dialogue paths.
+- [ ] Handle slot filling and manage dialogue state effectively.
+
+Level 7:
+- [ ] Utilize Rasa's built-in policies for intent classification and action prediction.
+- [ ] Experiment with different policies and evaluate their impact on chatbot performance.
+- [ ] Fine-tune the policies for better accuracy and user experience.
+
+Level 8:
+- [ ] Implement advanced NLU features like synonyms, regex features, and lookup tables.
+- [ ] Enhance the chatbot's understanding of user inputs using these advanced NLU capabilities.
+- [ ] Fine-tune entity extraction for improved accuracy.
+
+Level 9:
+- [ ] Integrate external tools or services like databases, APIs, or external systems with the chatbot.
+- [ ] Implement custom actions to interact with external resources.
+- [ ] Test and verify the integration between the chatbot and external services.
+
+Level 10:
+- [ ] Deploy the chatbot to a production environment.
+- [ ] Monitor and analyze the chatbot's performance and user interactions.
+- [ ] Continuously improve and refine the chatbot based on user feedback and analytics.
+
+
 ## Project ideas
 - flight booking
 - sushi ordering
